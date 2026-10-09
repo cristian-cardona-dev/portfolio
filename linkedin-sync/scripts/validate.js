@@ -549,7 +549,7 @@ function checkRound3ChangesAudit() {
     assertOk(/FAIL invalid status: change-006/.test(outFile(r)), 'M4 invalid status counted by the changes audit');
     assertOk(!/DRY-RUN OK/.test(outFile(r)), 'M4 invalid status never prints DRY-RUN OK');
     const v = runNode(t.edit, ['--mode', 'verify'], t.scriptsDir);
-    assertOk(v.status === 1 && /invalid status 'applied_typo'/.test(outFile(v)), 'M4 invalid status fails verify');
+    assertOk(v.status === 1 && /invalid status: change-006 \(status="applied_typo"\)/.test(outFile(v)), 'M4 invalid status fails verify');
   } finally { dropTree(t.root); }
 
   // M4: applied without reconciliation evidence

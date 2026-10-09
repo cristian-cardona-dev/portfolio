@@ -36,19 +36,26 @@ Round 1 restored validate.js from a sibling worktree, but that copy is calibrate
 ### Calibration invariants confirmed (10-06)
 - `expected '13'` absent; `list.length, 7` present; `total=8 scanned=7` present; headline is the 2026-10-06 value; `languages, []` present; `about_exact_text === null` present; no `change-008` / `change-013`.
 
+## Fix round 3 (one-line validator message-assertion fix)
+
+The single round-2 failure (`M4 invalid status fails verify`) was a stale assertion in the 2026-10-06 validator: the assertion regex `/invalid status 'applied_typo'/` (single quotes) did not match `edit-profile.js` verify-mode output, which actually emits `FAIL invalid status: change-006 (status="applied_typo")` (double quotes via `JSON.stringify`). The verify exit code was already 1; only the message-format regex failed.
+
+- Ported the calibration-neutral one-line regex fix from the 10-08 lineage (sibling worktree `portfolio-wt-linkedin-identity-v2`, line 560) into reconstructed `validate.js:552`:
+  - Before: `assertOk(v.status === 1 && /invalid status 'applied_typo'/.test(outFile(v)), 'M4 invalid status fails verify');`
+  - After:  `assertOk(v.status === 1 && /invalid status: change-006 \(status="applied_typo"\)/.test(outFile(v)), 'M4 invalid status fails verify');`
+- Changed ONLY that regex. No data, calibration constant, headline, languages, about, change-count, or totals assertion altered — all calibration remains 10-06.
+
 ## Validations
-- `npm test` (validate.js): runs 173 checks, reports 1 failure (exit 1). See "npm test result".
+- `npm test` (validate.js): runs 173 checks, reports 0 failures (exit 0). See "npm test result".
 - `node --check validate.js`: OK. `node --check edit-profile.js`: OK.
 - JSON parse of all changed/imported JSON (changes.json, profile.json, metrics.json, scripts/package.json, scripts/package-lock.json, archive/*.json): OK.
 - `git diff --check`: clean (exit 0). Note: validate.js restored with LF endings (matches edit-profile.js; repo uses core.autocrlf=true with pre-existing mixed endings).
 - Scoped scan: see classification below.
 
 ### npm test result
-Command: `npm test` in `linkedin-sync/scripts` (runs `node validate.js`). Result: 173 checks, 1 failure, RESULT: FAIL (exit 1).
+Command: `npm test` in `linkedin-sync/scripts` (runs `node validate.js`). Result: 173 checks, 0 failures, RESULT: PASS (exit 0).
 
-The single failure is an original 2026-10-06 validator defect faithfully reproduced by the reconstruction, NOT a data-state mismatch and NOT related to the GitHub username migration:
-- `FAIL  M4 invalid status fails verify` — reconstructed validate.js:552 asserts `/invalid status 'applied_typo'/` (single quotes), but edit-profile.js verify-mode audit output is `  FAIL invalid status: change-006 (status="applied_typo") (allowed: …)` (double quotes via `JSON.stringify`). The verify exit code is 1 as expected, but the regex does not match, so the combined assertion fails.
-- The later 2026-10-08 calibration corrected this to `/invalid status: change-006 \(status="applied_typo"\)/`. That correction lives in a calibration block (not in the 10-06 head), so it was intentionally NOT ported — porting it would alter the faithfully-reconstructed 10-06 validator. Documented, not forced to pass.
+All 173 checks pass against this branch's 2026-10-06 / 7-change data. The one prior failure (`M4 invalid status fails verify`) was fixed in fix round 3 by porting the calibration-neutral regex from the 10-08 lineage; no other assertion was touched.
 
 ### Scoped scan classification (github.com/HunterProX, github.com/tuuser, username=tuuser, github://, https://https://)
 - `github.com/HunterProX`: profile.json:12, changes.json:14, changes.json:95, sync-log.md:34 (reverted header) — historical live-LinkedIn evidence (value observed 2026-10-06) or preserved log text. No active target.
@@ -59,7 +66,7 @@ The single failure is an original 2026-10-06 validator defect faithfully reprodu
 - `https://https://`: none (no live occurrence).
 
 ## Owner instructions
-1. Decide the one remaining validator failure. The reconstructed validate.js is the original 2026-10-06 / 7-change validator; against this branch it reports 1 failure (`M4 invalid status fails verify`) — an original 10-06 regex defect (single vs double quotes), corrected in the 10-08 calibration. Options: (a) accept as documented; (b) port the calibration-neutral one-line regex fix `/invalid status: change-006 \(status="applied_typo"\)/` into validate.js:552; (c) leave as-is. NOT done here (would alter the faithfully-reconstructed 10-06 validator).
+1. Validator now passes against this branch (173 checks, 0 failures) after porting the calibration-neutral regex fix (fix round 3). No remaining validator-calibration decision.
 2. Decide whether the live LinkedIn project link (HunterProX/ai-chat-app) should be updated on LinkedIn itself; baseline evidence stays historical.
 3. Review, then merge branch ai/github-username-integrated-final yourself; source checkout is still dirty and can be cleaned after merge.
 
@@ -70,3 +77,7 @@ The single failure is an original 2026-10-06 validator defect faithfully reprodu
 ## Source-preservation check (before/after fix round 2)
 - Before: `git -C portfolio status --porcelain=v1 -uall` -> 5 modified + 9 untracked paths (identical set to round 1); HEAD 33defb3.
 - After: byte-identical status output; HEAD 33defb3. Source checkout untouched (round 2 only reconstructed the validator in the worktree, never the source checkout).
+
+## Source-preservation check (before/after fix round 3)
+- Before: `git -C portfolio status --porcelain=v1 -uall` -> 5 modified + 9 untracked paths (identical set); HEAD 33defb3.
+- After: byte-identical status output; HEAD 33defb3. Source checkout untouched (round 3 only edited the worktree validator regex + INTEGRATION-RESULT.md).
