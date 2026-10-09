@@ -4,7 +4,7 @@
 
 | Componente | Estado | Detalles |
 |---|---|---|
-| **Repositorio** | Creado | https://github.com/cristian-cardona-dev/portfolio |
+| **Repositorio** | Creado (URL verificada 2026-10-09 vía `git ls-remote`: existe, remoto `main` = `33defb3`) | https://github.com/cristian-cardona-dev/portfolio |
 | **GitHub Actions** | Pendiente | Requiere token con scope `workflow` |
 | **Script Sync** | Creado | `linkedin-sync/scripts/sync-linkedin.ps1` (solo reporta; no muta LinkedIn) |
 | **Editor de perfil** | Endurecido | `linkedin-sync/scripts/edit-profile.js` — dry-run por defecto; **write path DESHABILITADO** |

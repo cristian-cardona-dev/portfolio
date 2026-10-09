@@ -1,4 +1,4 @@
-# [Tu Nombre]
+# Cristian Cardona
 
 **Senior Full Stack Developer | Cloud Architecture | AI Integration**
 
@@ -36,8 +36,8 @@ Full stack + Stripe + PostgreSQL + Auth
 
 ## 📫 Contacto
 
-- **LinkedIn:** [linkedin.com/in/tuuser](https://linkedin.com/in/tuuser)
-- **Email:** [tuemail@gmail.com](mailto:tuemail@gmail.com)
+- **LinkedIn:** [linkedin.com/in/cristian-cardona-dev](https://www.linkedin.com/in/cristian-cardona-dev/)
+- **Email:** [crisss198@gmail.com](mailto:crisss198@gmail.com)
 - **GitHub:** [github.com/cristian-cardona-dev](https://github.com/cristian-cardona-dev)
 
 ## 🏆 Achievements

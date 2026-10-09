@@ -98,7 +98,7 @@ Portafolio: https://github.com/cristian-cardona-dev
 ¿Tienes 15 minutos para una llamada esta semana?
 
 Saludos,
-Hunter
+Cristian Cardona Dev
 ```
 
 ### Email - Aplicación Directa

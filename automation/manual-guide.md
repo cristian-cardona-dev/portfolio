@@ -87,7 +87,7 @@ Soy Senior Full Stack Developer con 7+ años de experiencia en React, Node.js, T
 Estoy buscando roles remote Senior Full Stack. Si conoces oportunidades o quieres conectar, me encantaría hablar.
 
 Saludos,
-Hunter
+Cristian Cardona Dev
 ```
 
 ---
