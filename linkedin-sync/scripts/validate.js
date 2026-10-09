@@ -11,7 +11,7 @@
  *   4. Secret patterns (case-insensitive, fragmented regexes so this file never
  *      trips itself) + in-suite positive/negative probes for every pattern
  *   5. JSON integrity + reconciliation policy (no 'applied' without evidence,
- *      expected 2026-10-06 statuses, cross-file baseline consistency)
+ *      expected 2026-10-08 statuses, cross-file baseline consistency)
  *   6. edit-profile.js behavior: default dry-run, --apply fails closed,
  *      multi-field refused, snapshot/verify modes work, and a dry-run with
  *      failing baseline guards reports DRY-RUN BLOCKED with a nonzero exit
@@ -48,8 +48,10 @@ const EDIT_SCRIPT = path.join(SCRIPTS_DIR, 'edit-profile.js');
 const SKIP_DIRS = new Set(['node_modules', '.git', 'snapshots']);
 
 const LIVE_BASELINE = {
-  headline: 'Senior Full Stack .NET Engineer | C#, Azure, Angular & Cloud-Native APIs | Building Scalable Systems and AI-Enabled Products',
-  location: 'Elche, Valencian Community, Spain'
+  headline: 'Senior Full Stack .NET Engineer | C#, Azure, Angular & Cloud-Native APIs | AI-Enabled Products',
+  location: 'Elche, Valencian Community, Spain',
+  languages: [{"language":"Spanish","level":"Native or bilingual proficiency"},{"language":"English","level":"Professional working proficiency"}],
+  about_exact_text: "Full Stack engineer based in Elche, Spain, working across .NET, Azure and Angular since 2017. Azure Cloud has been part of every role I have held, from SINCOSOFT to Talan.\n\nWhat I work with\n• Back end and APIs: .NET / C#, Java, Node.js\n• Front end: Angular, React, Vue.js\n• Cloud: Azure, Terraform\n• Data: SQL, MySQL, PostgreSQL, MongoDB\n\nAI-enabled products\nI integrate LLM APIs and Azure AI services into applications, including chat and streaming interfaces.\n\nOpen to\n• Remote employment\n• Freelance and consulting\n• Europe and the Americas\n\nLanguages: Spanish (native), English (professional).\n\nPortfolio: https://hunterprox.github.io/professional-evolution-portfolio/"
 };
 
 const EXPECTED_CHANGE_STATUSES = {
@@ -59,7 +61,13 @@ const EXPECTED_CHANGE_STATUSES = {
   'change-004': 'needs_review',
   'change-005': 'needs_review',
   'change-006': 'needs_review',
-  'change-007': 'obsolete'
+  'change-007': 'obsolete',
+  'change-008': 'applied',
+  'change-009': 'applied',
+  'change-010': 'pending',
+  'change-011': 'pending',
+  'change-012': 'pending',
+  'change-013': 'applied'
 };
 
 let failures = 0;
@@ -221,14 +229,14 @@ function checkJsonIntegrity() {
   if (!profile || !changes || !pkg) return;
 
   // Live-baseline constants must be preserved in profile.json.
-  assertEq(profile.headline, LIVE_BASELINE.headline, 'profile.json headline matches 2026-10-06 live baseline');
-  assertEq(profile.location, LIVE_BASELINE.location, 'profile.json location matches 2026-10-06 live baseline');
-  assertEq(profile.languages, [], 'profile.json languages reflects live empty section');
-  assertOk(profile.about_exact_text === null, 'profile.json does not fabricate exact About text');
+  assertEq(profile.headline, LIVE_BASELINE.headline, 'profile.json headline matches 2026-10-08 live baseline');
+  assertEq(profile.location, LIVE_BASELINE.location, 'profile.json location matches 2026-10-08 live baseline');
+  assertEq(profile.languages, LIVE_BASELINE.languages, 'profile.json languages reflects 2026-10-08 live section');
+  assertEq(profile.about_exact_text, LIVE_BASELINE.about_exact_text, 'profile.json About exact_text matches 2026-10-08 live capture');
 
-  // Reconciliation policy: statuses locked to the 2026-10-06 evidence.
+  // Reconciliation policy: statuses locked to the 2026-10-08 evidence.
   const list = Array.isArray(changes.changes) ? changes.changes : [];
-  assertEq(list.length, 7, 'changes.json contains all 7 reconciled proposals');
+  assertEq(list.length, 13, 'changes.json contains 7 reconciled + 6 pending proposals');
   const allowed = ['pending', 'obsolete', 'needs_review', 'applied'];
   let statusOk = true;
   for (const c of list) {
@@ -245,11 +253,11 @@ function checkJsonIntegrity() {
     }
     const expected = EXPECTED_CHANGE_STATUSES[c.id];
     if (expected && c.status !== expected) {
-      fail(`change ${c.id} status '${c.status}' != expected '${expected}' per 2026-10-06 evidence`);
+      fail(`change ${c.id} status '${c.status}' != expected '${expected}' per 2026-10-08 evidence`);
       statusOk = false;
     }
   }
-  if (statusOk) pass('all 7 change statuses match the 2026-10-06 reconciliation and policy');
+  if (statusOk) pass('all 7 change statuses match the 2026-10-08 reconciliation and policy');
 
   // Cross-file consistency: changes.json evidence must equal profile.json.
   const ev = changes.baseline_evidence || {};
@@ -529,7 +537,7 @@ function checkRound3ChangesAudit() {
     assertOk(/change-999/.test(outFile(r)), 'H1 unsupported change id is surfaced in output');
     assertOk(/certifications/.test(outFile(r)), 'H1 unsupported field name is surfaced in output');
     assertOk(/unsupported change target/.test(outFile(r)), 'H1 unsupported target reported by the changes audit');
-    assertOk(/total=8 scanned=7 unsupported_field=1/.test(outFile(r)), 'H1 reports changes_scanned vs changes_total');
+    assertOk(/total=14 scanned=13 unsupported_field=1/.test(outFile(r)), 'H1 reports changes_scanned vs changes_total');
     assertOk(!/DRY-RUN OK/.test(outFile(r)), 'H1 unsupported field never prints DRY-RUN OK');
     // verify mode must fail on the same document
     const v = runNode(t.edit, ['--mode', 'verify'], t.scriptsDir);
@@ -549,7 +557,7 @@ function checkRound3ChangesAudit() {
     assertOk(/FAIL invalid status: change-006/.test(outFile(r)), 'M4 invalid status counted by the changes audit');
     assertOk(!/DRY-RUN OK/.test(outFile(r)), 'M4 invalid status never prints DRY-RUN OK');
     const v = runNode(t.edit, ['--mode', 'verify'], t.scriptsDir);
-    assertOk(v.status === 1 && /invalid status 'applied_typo'/.test(outFile(v)), 'M4 invalid status fails verify');
+    assertOk(v.status === 1 && /invalid status: change-006 \(status="applied_typo"\)/.test(outFile(v)), 'M4 invalid status fails verify');
   } finally { dropTree(t.root); }
 
   // M4: applied without reconciliation evidence
@@ -658,7 +666,16 @@ function checkRound3MaskedPreview() {
     assertEq(lines.filter((l) => l.startsWith('Result:')).length, 1, 'M1 exactly one Result line in the output');
 
     // Control character on a single line: escaped, never raw.
-    target.new_value = 'INJECTED
+    target.new_value = 'INJECTED\x01CTRL';
+    writeJsonFile(t.changesPath, doc);
+    const r2 = runNode(t.edit, ['--field', 'location'], t.scriptsDir);
+    assertOk(!/\x01/.test(outFile(r2)), 'M1 control character never appears raw in output');
+    assertOk(/INJECTED\\u0001CTRL/.test(outFile(r2)), 'M1 control character is escaped as \\u0001');
+  } finally { dropTree(t.root); }
+}
+
+function main() {
+  process.stdout.write('=== linkedin-sync validation (offline, deterministic) ===\n');
   process.stdout.write(`root: ${SYNC_ROOT}\n\n`);
 
   const files = walk(SYNC_ROOT, []);
@@ -670,6 +687,10 @@ function checkRound3MaskedPreview() {
   checkJsonIntegrity();
   checkDocsMentionReconciliation();
   checkEditProfileBehavior();
+  checkSecretPatternCoverage();
+  checkRound3ChangesAudit();
+  checkRound3MaskingAndOut();
+  checkRound3MaskedPreview();
 
   process.stdout.write(`\n${checks} checks, ${failures} failure(s)\n`);
   if (failures > 0) {
