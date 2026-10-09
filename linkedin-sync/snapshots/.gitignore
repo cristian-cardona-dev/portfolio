@@ -1,0 +1,4 @@
+# Local snapshot artifacts are never committed (masked state dumps, still local).
+*
+!.gitignore
+!README.md

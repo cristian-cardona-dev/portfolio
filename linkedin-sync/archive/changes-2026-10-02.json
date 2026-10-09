@@ -1,0 +1,83 @@
+{
+  "last_sync": "2026-10-02T09:14:00Z",
+  "pending_changes": [
+    {
+      "id": "change-001",
+      "type": "headline_update",
+      "field": "headline",
+      "old_value": "Senior Software Developer",
+      "new_value": "Senior Full Stack Developer | Cloud Architecture | AI Integration | Remote-First",
+      "date": "2026-10-02T09:14:00Z",
+      "status": "pending",
+      "priority": "critical"
+    },
+    {
+      "id": "change-002",
+      "type": "about_update",
+      "field": "about",
+      "old_value": "Full Stack Developer / Senior, responsible for end-to-end web application development and creative cloud engineering.",
+      "new_value": "🚀 Senior Full Stack Developer con 7+ años de experiencia construyendo sistemas production-grade en la nube...",
+      "date": "2026-10-02T09:14:00Z",
+      "status": "pending",
+      "priority": "critical"
+    },
+    {
+      "id": "change-003",
+      "type": "experience_update",
+      "field": "experience[0].description",
+      "old_value": "",
+      "new_value": "• Desarrollo de aplicaciones full stack con React, Node.js, TypeScript...",
+      "date": "2026-10-02T09:14:00Z",
+      "status": "pending",
+      "priority": "high"
+    },
+    {
+      "id": "change-004",
+      "type": "skills_add",
+      "field": "skills",
+      "old_value": [],
+      "new_value": ["React", "Next.js", "TypeScript", "Node.js", "AWS", "Kubernetes", "Terraform", "OpenAI API", "RAG"],
+      "date": "2026-10-02T09:14:00Z",
+      "status": "pending",
+      "priority": "high"
+    },
+    {
+      "id": "change-005",
+      "type": "projects_add",
+      "field": "projects",
+      "old_value": [],
+      "new_value": ["ai-chat-app", "cloud-dashboard", "saas-mvp"],
+      "date": "2026-10-02T09:14:00Z",
+      "status": "pending",
+      "priority": "high"
+    },
+    {
+      "id": "change-006",
+      "type": "location_update",
+      "field": "location",
+      "old_value": "Elche, Valencian Community, Spain",
+      "new_value": "Colombia (Remote)",
+      "date": "2026-10-02T09:14:00Z",
+      "status": "pending",
+      "priority": "medium"
+    },
+    {
+      "id": "change-007",
+      "type": "languages_update",
+      "field": "languages[0].level",
+      "old_value": "Limited working proficiency",
+      "new_value": "Professional Working Proficiency",
+      "date": "2026-10-02T09:14:00Z",
+      "status": "pending",
+      "priority": "medium"
+    }
+  ],
+  "sync_history": [
+    {
+      "date": "2026-10-02T09:14:00Z",
+      "changes": 7,
+      "status": "pending",
+      "trigger": "manual"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "name": "linkedin-sync-scripts",
+  "version": "1.0.0",
+  "description": "Local tooling for the LinkedIn sync package. Deterministic offline validation; edit-profile.js defaults to dry-run with the browser write path disabled.",
+  "main": "edit-profile.js",
+  "scripts": {
+    "validate": "node validate.js",
+    "test": "node validate.js",
+    "dry-run": "node edit-profile.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs"
+}

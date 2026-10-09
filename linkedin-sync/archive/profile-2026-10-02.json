@@ -1,0 +1,41 @@
+{
+  "profile_url": "https://www.linkedin.com/in/cristian-cardona-dev/",
+  "headline": "Senior Software Developer",
+  "about": "Full Stack Developer / Senior, responsible for end-to-end web application development and creative cloud engineering.",
+  "location": "Elche, Valencian Community, Spain",
+  "experience": [
+    {
+      "title": "Full Stack Engineer",
+      "company": "Talan",
+      "period": "Oct 2023 - Present",
+      "description": ""
+    },
+    {
+      "title": "Semisenior Software Development Engineer",
+      "company": "Siigo",
+      "period": "Nov 2021 - Dec 2022",
+      "description": "Led development of several large-scale projects using .NET, Azure Cloud, DevOps, Docker, Kubernetes, Angular, and Kafka"
+    }
+  ],
+  "skills": [
+    "Quality Assurance",
+    "Problem Solving",
+    "Debugging",
+    "Java Development",
+    "Design Patterns",
+    "Front-End Development",
+    "Azure DevOps",
+    "Spring Boot",
+    "Unit Testing"
+  ],
+  "projects": [],
+  "certifications": [
+    "Ingeniero de Sistemas - Universidad ECCI",
+    "Azure AZ-900 - Udemy"
+  ],
+  "languages": [
+    {"name": "Inglés", "level": "Limited working proficiency"},
+    {"name": "German", "level": "Elementary proficiency"}
+  ],
+  "last_updated": "2026-10-02T09:14:00Z"
+}

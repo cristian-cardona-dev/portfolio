@@ -1,41 +1,35 @@
 {
   "profile_url": "https://www.linkedin.com/in/cristian-cardona-dev/",
-  "headline": "Senior Software Developer",
-  "about": "Full Stack Developer / Senior, responsible for end-to-end web application development and creative cloud engineering.",
+  "last_updated": "2026-10-06",
+  "source": "read_only_live_profile_read_2026-10-06",
+  "headline": "Senior Full Stack .NET Engineer | C#, Azure, Angular & Cloud-Native APIs | Building Scalable Systems and AI-Enabled Products",
+  "about_summary": ".NET/Azure-focused narrative and portfolio URL",
+  "about_exact_text": null,
   "location": "Elche, Valencian Community, Spain",
-  "experience": [
-    {
-      "title": "Full Stack Engineer",
-      "company": "Talan",
-      "period": "Oct 2023 - Present",
-      "description": ""
-    },
-    {
-      "title": "Semisenior Software Development Engineer",
-      "company": "Siigo",
-      "period": "Nov 2021 - Dec 2022",
-      "description": "Led development of several large-scale projects using .NET, Azure Cloud, DevOps, Docker, Kubernetes, Angular, and Kafka"
-    }
+  "experience_companies": ["Talan", "Siigo", "BITS Americas", "ITEHL", "SINCOSOFT"],
+  "skills": null,
+  "projects": [
+    {"name": "AI Chat API Prototype", "url": "https://github.com/HunterProX/ai-chat-app"}
   ],
-  "skills": [
-    "Quality Assurance",
-    "Problem Solving",
-    "Debugging",
-    "Java Development",
-    "Design Patterns",
-    "Front-End Development",
-    "Azure DevOps",
-    "Spring Boot",
-    "Unit Testing"
-  ],
-  "projects": [],
-  "certifications": [
-    "Ingeniero de Sistemas - Universidad ECCI",
-    "Azure AZ-900 - Udemy"
-  ],
-  "languages": [
-    {"name": "Inglés", "level": "Limited working proficiency"},
-    {"name": "German", "level": "Elementary proficiency"}
-  ],
-  "last_updated": "2026-10-02T09:14:00Z"
+  "certifications": null,
+  "languages": [],
+  "verification": {
+    "note": "verified=true means the value was observed in the 2026-10-06 read-only live read. verified=false means NOT captured in that read; null entries are 'unknown', never 'empty'.",
+    "headline": {"verified": true},
+    "about": {"verified": true, "exact_text_captured": false},
+    "location": {"verified": true},
+    "experience_companies": {"verified": true, "details_captured": false},
+    "skills": {"verified": false, "note": "Skills section not captured on 2026-10-06. The previous local list (Quality Assurance, Java Development, etc.) was stale and has been archived, not deleted."},
+    "projects": {"verified": true, "note": "Only project observed in the read; other projects may exist but were not captured."},
+    "certifications": {"verified": false, "note": "Not captured on 2026-10-06. Previous local list archived."},
+    "languages": {"verified": true, "note": "Live Languages section had no entries on 2026-10-06."}
+  },
+  "metrics_reference": {
+    "date": "2026-10-06",
+    "window": "past_7_days",
+    "profile_views": 15,
+    "search_appearances": 10,
+    "note": "Only these two metrics were re-verified on 2026-10-06. Other figures in metrics.json were not re-checked and may be stale."
+  },
+  "archive_note": "Pre-reconciliation snapshot (2026-10-02) preserved at archive/profile-2026-10-02.json. This file is a live-baseline record, not a proposal store; see changes.json for proposals."
 }
