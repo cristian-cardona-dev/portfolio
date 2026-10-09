@@ -1,6 +1,21 @@
 {
   "last_sync": "2026-10-02T09:14:00Z",
-  "pending_changes": [
+  "last_reconciled": "2026-10-06",
+  "reconciliation_policy": "Statuses reflect a read-only live LinkedIn baseline captured on 2026-10-06. No proposal is marked 'applied' unless the live profile was observed to contain that exact value. A value existing in a local script is NOT evidence of application. Pre-reconciliation state preserved at archive/changes-2026-10-02.json.",
+  "baseline_evidence": {
+    "date": "2026-10-06",
+    "source": "read_only_live_profile_read",
+    "headline": "Senior Full Stack .NET Engineer | C#, Azure, Angular & Cloud-Native APIs | Building Scalable Systems and AI-Enabled Products",
+    "about": ".NET/Azure-focused narrative and portfolio URL (exact text not captured)",
+    "location": "Elche, Valencian Community, Spain",
+    "experience_companies": ["Talan", "Siigo", "BITS Americas", "ITEHL", "SINCOSOFT"],
+    "languages": [],
+    "projects": [
+      {"name": "AI Chat API Prototype", "url": "https://github.com/HunterProX/ai-chat-app"}
+    ],
+    "metrics_7d": {"profile_views": 15, "search_appearances": 10}
+  },
+  "changes": [
     {
       "id": "change-001",
       "type": "headline_update",
@@ -8,8 +23,14 @@
       "old_value": "Senior Software Developer",
       "new_value": "Senior Full Stack Developer | Cloud Architecture | AI Integration | Remote-First",
       "date": "2026-10-02T09:14:00Z",
-      "status": "pending",
-      "priority": "critical"
+      "status": "obsolete",
+      "priority": "critical",
+      "reconciliation": {
+        "date": "2026-10-06",
+        "applied": false,
+        "evidence": "Live headline on 2026-10-06 is 'Senior Full Stack .NET Engineer | C#, Azure, Angular & Cloud-Native APIs | Building Scalable Systems and AI-Enabled Products' — it matches neither the old_value nor the proposed new_value.",
+        "reason": "Profile was updated outside this workflow to a .NET/Azure-focused headline. The proposed value is stale and misaligned with the live positioning. Any future headline change must start from the live baseline value, not from old_value."
+      }
     },
     {
       "id": "change-002",
@@ -18,8 +39,14 @@
       "old_value": "Full Stack Developer / Senior, responsible for end-to-end web application development and creative cloud engineering.",
       "new_value": "🚀 Senior Full Stack Developer con 7+ años de experiencia construyendo sistemas production-grade en la nube...",
       "date": "2026-10-02T09:14:00Z",
-      "status": "pending",
-      "priority": "critical"
+      "status": "obsolete",
+      "priority": "critical",
+      "reconciliation": {
+        "date": "2026-10-06",
+        "applied": false,
+        "evidence": "Live About on 2026-10-06 is already a .NET/Azure-focused narrative and a portfolio URL — it differs from old_value, so the section was rewritten outside this workflow.",
+        "reason": "Proposed Spanish remote-first text is stale and does not reflect the live .NET/Azure narrative. Exact live About text was not captured; do not treat any local copy as authoritative."
+      }
     },
     {
       "id": "change-003",
@@ -28,8 +55,14 @@
       "old_value": "",
       "new_value": "• Desarrollo de aplicaciones full stack con React, Node.js, TypeScript...",
       "date": "2026-10-02T09:14:00Z",
-      "status": "pending",
-      "priority": "high"
+      "status": "needs_review",
+      "priority": "high",
+      "reconciliation": {
+        "date": "2026-10-06",
+        "applied": false,
+        "evidence": "Live experience list on 2026-10-06 includes Talan (plus Siigo, BITS Americas, ITEHL, SINCOSOFT). The live description text for Talan was not captured.",
+        "reason": "Never applied. Proposed bullets describe React/Node/TypeScript work, which is misaligned with the live .NET/Azure/Angular positioning. Human must re-capture the live Talan description and re-propose aligned content if a change is still wanted."
+      }
     },
     {
       "id": "change-004",
@@ -38,8 +71,14 @@
       "old_value": [],
       "new_value": ["React", "Next.js", "TypeScript", "Node.js", "AWS", "Kubernetes", "Terraform", "OpenAI API", "RAG"],
       "date": "2026-10-02T09:14:00Z",
-      "status": "pending",
-      "priority": "high"
+      "status": "needs_review",
+      "priority": "high",
+      "reconciliation": {
+        "date": "2026-10-06",
+        "applied": false,
+        "evidence": "The 2026-10-06 read did not capture the live skills section; old_value [] is therefore unverified and must not be assumed correct.",
+        "reason": "Never applied. Proposed stack (React/Next.js/Node/AWS) is misaligned with the live .NET/Azure/Angular headline. Human must capture the live skills first, then re-propose only skills consistent with the live positioning."
+      }
     },
     {
       "id": "change-005",
@@ -48,8 +87,14 @@
       "old_value": [],
       "new_value": ["ai-chat-app", "cloud-dashboard", "saas-mvp"],
       "date": "2026-10-02T09:14:00Z",
-      "status": "pending",
-      "priority": "high"
+      "status": "needs_review",
+      "priority": "high",
+      "reconciliation": {
+        "date": "2026-10-06",
+        "applied": false,
+        "evidence": "Live projects on 2026-10-06 include 'AI Chat API Prototype' linked to https://github.com/HunterProX/ai-chat-app — the ai-chat-app item appears to already be present under a different display name. cloud-dashboard and saas-mvp were not observed in the read.",
+        "reason": "Partially already present on the live profile; remaining items unverified. Never applied via this workflow. Human must confirm the full live project list before proposing additions or renames."
+      }
     },
     {
       "id": "change-006",
@@ -58,8 +103,14 @@
       "old_value": "Elche, Valencian Community, Spain",
       "new_value": "Colombia (Remote)",
       "date": "2026-10-02T09:14:00Z",
-      "status": "pending",
-      "priority": "medium"
+      "status": "needs_review",
+      "priority": "medium",
+      "reconciliation": {
+        "date": "2026-10-06",
+        "applied": false,
+        "evidence": "Live location on 2026-10-06 is still 'Elche, Valencian Community, Spain' — identical to old_value.",
+        "reason": "Never applied. 'Colombia (Remote)' asserts a relocation; that is a factual claim about the profile owner and requires explicit human confirmation before it is proposed again. Do not apply from local files."
+      }
     },
     {
       "id": "change-007",
@@ -68,8 +119,14 @@
       "old_value": "Limited working proficiency",
       "new_value": "Professional Working Proficiency",
       "date": "2026-10-02T09:14:00Z",
-      "status": "pending",
-      "priority": "medium"
+      "status": "obsolete",
+      "priority": "medium",
+      "reconciliation": {
+        "date": "2026-10-06",
+        "applied": false,
+        "evidence": "Live Languages section on 2026-10-06 has no entries at all. The local profile.json entries (Inglés/German) were stale local data, not live truth.",
+        "reason": "Target languages[0] does not exist on the live profile, so the proposed level change cannot apply. If languages should exist, that is a new proposal starting from the live empty state, not an update of a nonexistent entry."
+      }
     }
   ],
   "sync_history": [
@@ -78,6 +135,13 @@
       "changes": 7,
       "status": "pending",
       "trigger": "manual"
+    },
+    {
+      "date": "2026-10-06",
+      "changes": 7,
+      "status": "reconciled",
+      "trigger": "manual_reconciliation_read_only_baseline",
+      "summary": "Reconciled all 7 proposals against the 2026-10-06 read-only live baseline: 3 obsolete (change-001 headline and change-002 about — profile already updated outside this workflow; change-007 languages — live Languages section has no entries, stale local language entries corrected in profile.json), 4 needs_review (change-003 experience, change-004 skills, change-005 projects — content misaligned or partially present/unverified; change-006 location — relocation claim unconfirmed). Zero applied. No LinkedIn writes performed."
     }
   ]
 }
