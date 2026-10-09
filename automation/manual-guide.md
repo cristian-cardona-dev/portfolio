@@ -32,7 +32,7 @@ Senior Full Stack Developer | Cloud Architecture | AI Integration | Remote-First
 • Consultoría cloud architecture
 • Fractional CTO para startups
 
-🔗 Portafolio: https://github.com/HunterProX
+🔗 Portafolio: https://github.com/cristian-cardona-dev
 ```
 
 ### Experience

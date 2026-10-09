@@ -93,7 +93,7 @@ Me interesa la posición de [Rol] en [Empresa]. Soy Senior Full Stack Developer 
 
 Especializado en AI integration (LLM APIs, RAG) y Kubernetes. Me encantaría contribuir a [Empresa].
 
-Portafolio: https://github.com/HunterProX
+Portafolio: https://github.com/cristian-cardona-dev
 
 ¿Tienes 15 minutos para una llamada esta semana?
 
@@ -114,9 +114,9 @@ Me interesa la posición de [Rol] en [Empresa]. Soy Senior Full Stack Developer 
 - AWS, GCP, Kubernetes, Terraform
 - AI Integration (LLM APIs, RAG, AI Agents)
 
-Portafolio: https://github.com/HunterProX
+Portafolio: https://github.com/cristian-cardona-dev
 LinkedIn: https://linkedin.com/in/hunterprox
 
 Saludos,
-Hunter ProX
+Cristian Cardona Dev
 ```

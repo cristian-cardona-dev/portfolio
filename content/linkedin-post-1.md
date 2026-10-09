@@ -186,5 +186,5 @@ The companies that adopt AI now will have a significant competitive advantage.
 
 ---
 
-**About the Author:** Hunter ProX is a Senior Full Stack Developer with 7+ years of experience in AI integration, cloud architecture, and system design. Connect on [LinkedIn](https://linkedin.com/in/hunterprox).
+**About the Author:** Cristian Cardona Dev is a Senior Full Stack Developer with 7+ years of experience in AI integration, cloud architecture, and system design. Connect on [LinkedIn](https://linkedin.com/in/hunterprox).
 ```

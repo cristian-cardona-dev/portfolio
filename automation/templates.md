@@ -131,13 +131,13 @@ Me interesa la posición de [Rol] en [Empresa]. Soy Senior Full Stack Developer 
 
 He construido sistemas production-grade para startups y empresas. Me encantaría contribuir a [Empresa].
 
-Portafolio: https://github.com/HunterProX
+Portafolio: https://github.com/cristian-cardona-dev
 LinkedIn: https://linkedin.com/in/hunterprox
 
 ¿Tienes 15 minutos para una llamada esta semana?
 
 Saludos,
-Hunter ProX
+Cristian Cardona Dev
 ```
 
 ### Template 2: Referencia
@@ -150,10 +150,10 @@ Hola [Nombre],
 
 Especializado en AI integration (LLM APIs, RAG) y cloud architecture. Me encantaría saber más sobre [Empresa].
 
-Portafolio: https://github.com/HunterProX
+Portafolio: https://github.com/cristian-cardona-dev
 
 Saludos,
-Hunter ProX
+Cristian Cardona Dev
 ```
 
 ---
