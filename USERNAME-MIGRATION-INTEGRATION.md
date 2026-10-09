@@ -7,7 +7,7 @@
 ## Files changed
 automation/manual-guide.md, automation/templates.md, content/article-1-llm-integration.md, content/job-applications.md, content/linkedin-post-1.md, linkedin-sync/dashboard.md, profiles/github-readme.md, profiles/linkedin-optimized.md, profiles/upwork-optimized.md
 
-Changes: GitHub URLs and stats username migrated; malformed `github://tuuser` fixed; `tuuser.dev` line removed (no domain invented); display-brand titles/bios updated. No project README clone URLs existed.
+Changes: GitHub URLs and stats username migrated; malformed `github://tuuser` fixed; `tuuser.dev` line removed (no domain invented); display-brand titles/bios updated. Project README clone URLs existed and were migrated to `cristian-cardona-dev` in commit `ai(portfolio): migrate project README clone URLs` (post-merge correction).
 
 ## Preserved
 - All `linkedin.com/in/...` URLs (including `hunterprox`), as external LinkedIn identities
