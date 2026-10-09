@@ -549,7 +549,7 @@ function checkRound3ChangesAudit() {
     assertOk(/FAIL invalid status: change-006/.test(outFile(r)), 'M4 invalid status counted by the changes audit');
     assertOk(!/DRY-RUN OK/.test(outFile(r)), 'M4 invalid status never prints DRY-RUN OK');
     const v = runNode(t.edit, ['--mode', 'verify'], t.scriptsDir);
-    assertOk(v.status === 1 && /invalid status 'applied_typo'/.test(outFile(v)), 'M4 invalid status fails verify');
+    assertOk(v.status === 1 && /invalid status: change-006 \(status="applied_typo"\)/.test(outFile(v)), 'M4 invalid status fails verify');
   } finally { dropTree(t.root); }
 
   // M4: applied without reconciliation evidence
@@ -658,7 +658,16 @@ function checkRound3MaskedPreview() {
     assertEq(lines.filter((l) => l.startsWith('Result:')).length, 1, 'M1 exactly one Result line in the output');
 
     // Control character on a single line: escaped, never raw.
-    target.new_value = 'INJECTED
+    target.new_value = 'INJECTED\x01CTRL';
+    writeJsonFile(t.changesPath, doc);
+    const r2 = runNode(t.edit, ['--field', 'location'], t.scriptsDir);
+    assertOk(!/\x01/.test(outFile(r2)), 'M1 control character never appears raw in output');
+    assertOk(/INJECTED\\u0001CTRL/.test(outFile(r2)), 'M1 control character is escaped as \\u0001');
+  } finally { dropTree(t.root); }
+}
+
+function main() {
+  process.stdout.write('=== linkedin-sync validation (offline, deterministic) ===\n');
   process.stdout.write(`root: ${SYNC_ROOT}\n\n`);
 
   const files = walk(SYNC_ROOT, []);
@@ -670,6 +679,10 @@ function checkRound3MaskedPreview() {
   checkJsonIntegrity();
   checkDocsMentionReconciliation();
   checkEditProfileBehavior();
+  checkSecretPatternCoverage();
+  checkRound3ChangesAudit();
+  checkRound3MaskingAndOut();
+  checkRound3MaskedPreview();
 
   process.stdout.write(`\n${checks} checks, ${failures} failure(s)\n`);
   if (failures > 0) {

@@ -1,4 +1,4 @@
-# LinkedIn Profile Optimizado - HunterProX
+# LinkedIn Profile Optimizado - Cristian Cardona Dev
 
 ## Headline
 ```
@@ -30,7 +30,7 @@ Senior Full Stack Developer | Cloud Architecture | AI Integration | Remote-First
 • Consultoría cloud architecture
 • Fractional CTO para startups
 
-🔗 Portafolio: https://github.com/HunterProX
+🔗 Portafolio: https://github.com/cristian-cardona-dev
 ```
 
 ## Experience
@@ -90,6 +90,6 @@ Senior Full Stack Developer | Cloud Architecture | AI Integration | Remote-First
 - [Pendiente - pedir recomendaciones a ex colegas]
 
 ## Projects
-- [AI Chat App](https://github.com/HunterProX/ai-chat-app) - React + OpenAI + RAG
-- [Cloud Dashboard](https://github.com/HunterProX/cloud-dashboard) - Next.js + AWS + K8s
-- [SaaS MVP](https://github.com/HunterProX/saas-mvp) - Full stack + Stripe
+- [AI Chat App](https://github.com/cristian-cardona-dev/ai-chat-app) - React + OpenAI + RAG
+- [Cloud Dashboard](https://github.com/cristian-cardona-dev/cloud-dashboard) - Next.js + AWS + K8s
+- [SaaS MVP](https://github.com/cristian-cardona-dev/saas-mvp) - Full stack + Stripe

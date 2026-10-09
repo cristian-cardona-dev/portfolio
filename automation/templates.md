@@ -11,7 +11,7 @@ Soy Senior Full Stack Developer con 7+ años de experiencia en React, Node.js, T
 Estoy buscando roles remote Senior Full Stack. Si conoces oportunidades o quieres conectar, me encantaría hablar.
 
 Saludos,
-Hunter
+Cristian Cardona Dev
 ```
 
 ### Template 2: Hiring Manager
@@ -25,7 +25,7 @@ He construido sistemas production-grade con AI integration (LLM APIs, RAG, AI Ag
 ¿Tienes 15 minutos para una llamada esta semana?
 
 Saludos,
-Hunter
+Cristian Cardona Dev
 ```
 
 ### Template 3: Founder/CTO Startup
@@ -40,7 +40,7 @@ Soy Senior Full Stack Developer con 7+ años de experiencia. Especializado en:
 He ayudado a startups a construir MVPs y escalar sistemas. Me encantaría saber más sobre [Empresa] y cómo puedo contribuir.
 
 Saludos,
-Hunter
+Cristian Cardona Dev
 ```
 
 ### Template 4: Ex Colega
@@ -52,7 +52,7 @@ Espero que estés bien. Estoy tomando proyectos freelance y buscando roles remot
 Si conoces oportunidades o quieres conectar, me encantaría saber de ti.
 
 Saludos,
-Hunter
+Cristian Cardona Dev
 ```
 
 ---
@@ -131,13 +131,13 @@ Me interesa la posición de [Rol] en [Empresa]. Soy Senior Full Stack Developer 
 
 He construido sistemas production-grade para startups y empresas. Me encantaría contribuir a [Empresa].
 
-Portafolio: https://github.com/HunterProX
+Portafolio: https://github.com/cristian-cardona-dev
 LinkedIn: https://linkedin.com/in/hunterprox
 
 ¿Tienes 15 minutos para una llamada esta semana?
 
 Saludos,
-Hunter ProX
+Cristian Cardona Dev
 ```
 
 ### Template 2: Referencia
@@ -150,10 +150,10 @@ Hola [Nombre],
 
 Especializado en AI integration (LLM APIs, RAG) y cloud architecture. Me encantaría saber más sobre [Empresa].
 
-Portafolio: https://github.com/HunterProX
+Portafolio: https://github.com/cristian-cardona-dev
 
 Saludos,
-Hunter ProX
+Cristian Cardona Dev
 ```
 
 ---
@@ -181,7 +181,7 @@ He ayudado a 10+ empresas a integrar AI en sus productos. Puedo entregar:
 ¿Tienes 15 minutos para discutir tu proyecto?
 
 Saludos,
-Hunter
+Cristian Cardona Dev
 ```
 
 ### Template 2: Proyecto Full Stack
@@ -205,7 +205,7 @@ He construido MVPs y sistemas production-grade para startups. Puedo ayudarte a:
 ¿Tienes 15 minutos para discutir tu proyecto?
 
 Saludos,
-Hunter
+Cristian Cardona Dev
 ```
 
 ---

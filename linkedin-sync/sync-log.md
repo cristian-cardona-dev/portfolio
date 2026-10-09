@@ -66,3 +66,9 @@
 - **Métricas 7 días (2026-10-06):** 15 profile views, 10 search appearances — confirmadas iguales al baseline local
 - **Archivos:** `profile.json` y `changes.json` reconciliados; snapshot previo preservado en `linkedin-sync/archive/`; `edit-profile.js` endurecido (dry-run por defecto, write path deshabilitado); `validate.js` añadido (`npm test`, offline)
 - **Estado:** Reconciliación completada; sin escrituras en LinkedIn
+
+---
+
+### 2026-10-09 — Migración de username de GitHub (nota añadida, append-only)
+- **Trigger:** Task 8 fix round 1 — migración de username de GitHub
+- **Registro (append-only):** El username de GitHub migró a `cristian-cardona-dev`. Esta nota se añade al final del log; ninguna entrada previa fue reescrita.
